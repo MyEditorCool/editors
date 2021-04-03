@@ -1,0 +1,5 @@
+{
+  "extension": ".storage.json",
+  "readAsText": true,
+  "emptyContent": "{\"entities\": [],\"relations\":[]}"
+}

@@ -1,0 +1,12 @@
+{
+  "extension": [
+    ".js",
+    ".jsx",
+    ".css",
+    ".html",
+    ".xml",
+    ".json",
+    ".ts"
+  ],
+  "readAsText": true
+}

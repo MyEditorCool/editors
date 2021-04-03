@@ -1,0 +1,5 @@
+{
+  "extension": ".doc.json",
+  "emptyContent": "{\"blocks\": [{\"type\": \"paragraph\",\"data\": {\"text\": \"\"}}]}",
+  "readAsText": true
+}
