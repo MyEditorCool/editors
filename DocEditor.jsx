@@ -1,7 +1,6 @@
 /**@jsx createElement */
 import {createElement, useRef, render as renderComponent} from 'axii'
 import { Editorjs } from 'axii-components'
-import imageEditorPlugin from 'axii-components/editorjs/imageEditorPlugin.jsx'
 import Shortcut from '@codexteam/shortcuts'
 
 export const extension = '.doc.json'
@@ -20,7 +19,7 @@ export function render({ data, onSave, onChange }, root) {
   const editor = useRef()
   const tools = {
     image: {
-      class: imageEditorPlugin,
+      class: Editorjs.imageEditorPlugin,
       config: {
         inline: true,
       }
