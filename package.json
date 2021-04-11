@@ -22,7 +22,8 @@
     "vite": "^2.1.3"
   },
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
+    "local": "vite --config vite.local.config.js",
     "build": "vite build",
     "publish:patch": "node ./scripts/publish.js --patch",
     "publish:minor": "node ./scripts/publish.js --minor"

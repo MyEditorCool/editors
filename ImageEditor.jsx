@@ -1,9 +1,14 @@
 /**@jsx createElement */
 import {createElement} from 'axii'
 import ImageEditor from 'tui-image-editor'
-import 'tui-image-editor/dist/tui-image-editor.min.css'
+
 import Shortcut from "@codexteam/shortcuts";
-import './ImageEditor.less'
+import baseCss from 'tui-image-editor/dist/tui-image-editor.min.css'
+import ImageEditorCss from './ImageEditor.less'
+import styleInject from "style-inject";
+
+styleInject(baseCss)
+styleInject(ImageEditorCss)
 
 const mimeTypeMap = {
   'png': 'image/png',
