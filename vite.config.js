@@ -4,7 +4,6 @@ function makePath(relativePath) {
   return path.join(path.dirname(import.meta.url.replace('file:', '')), relativePath)
 }
 
-const PACKAGE_ROOT_PATH = makePath('../../engine/packages')
 export default {
   esbuild: {
     jsxFactory: 'createElement',
