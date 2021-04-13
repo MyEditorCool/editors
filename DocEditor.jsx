@@ -1,6 +1,6 @@
 /**@jsx createElement */
 import {createElement, useRef, render as renderComponent} from 'axii'
-import { Editorjs } from 'axii-components'
+import Editorjs from 'axii-components/dist/editorjs/index.js'
 import Shortcut from '@codexteam/shortcuts'
 
 export const extension = '.doc.json'
