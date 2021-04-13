@@ -1,6 +1,6 @@
 /**@jsx createElement */
 import {createElement, useRef, render as renderComponent} from 'axii'
-import { Editorjs, Button, ImageEditor, Spreadsheet, ToastGrid } from 'axii-components'
+import ToastGrid from 'axii-components/dist/toastGrid/index.js'
 
 const extension = '.table.json'
 
