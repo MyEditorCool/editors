@@ -19,10 +19,13 @@ export function render({ data, onSave, onChange }, root) {
   const editor = useRef()
   const tools = {
     image: {
-      class: Editorjs.imageEditorPlugin,
+      class: Editorjs.ImageEditorPlugin,
       config: {
         inline: true,
       }
+    },
+    table: {
+      class: Editorjs.TablePlugin
     }
   }
 
