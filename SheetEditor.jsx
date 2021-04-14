@@ -1,6 +1,5 @@
 import Shortcut from "@codexteam/shortcuts";
 
-
 export const extension = '.sheet.json'
 
 function appendScript(url) {
@@ -25,7 +24,6 @@ function appendStylesheet(href) {
     document.getElementsByTagName('head')[0].appendChild(link);
   })
 }
-
 
 
 export function setup(content) {

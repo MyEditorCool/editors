@@ -14,28 +14,6 @@ styleInject(baseCss)
 styleInject(overwriteCss)
 styleInject(draculaCss)
 
-function appendStyleSheet(href, attrs) {
-  return new Promise((resolve, reject) => {
-    const link = document.createElement('link')
-    link.href = href
-    link.rel = 'stylesheet'
-    link.onload = resolve
-    link.onerror = reject
-    document.body.appendChild(link)
-  })
-}
-
-function appendScript(src) {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script')
-    script.setAttribute('src', src)
-    script.type= 'text/javascript'
-    script.onload = resolve
-    script.onerror = reject
-    document.body.appendChild(script)
-  })
-}
-
 const extensionToLanguage = {
   '.js': 'javascript',
   '.jsx': 'jsx',

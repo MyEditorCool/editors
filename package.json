@@ -7,7 +7,7 @@
   "dependencies": {
     "@codexteam/shortcuts": "^1.1.1",
     "axii": "^1.0.3",
-    "axii-components": "^1.0.21",
+    "axii-components": "^1.0.22",
     "axii-x6": "^1.0.1",
     "codemirror": "^5.60.0",
     "command-line-args": "^5.1.1",

@@ -1,5 +1,3 @@
-import { emptyContent, render } from "./SheetEditor.jsx";
+import { emptyContent, setup, render } from "./SheetEditor.jsx";
 
-const data = emptyContent
-
-render({ data }, document.getElementById('root'))
+render(setup(emptyContent), document.getElementById('root'))

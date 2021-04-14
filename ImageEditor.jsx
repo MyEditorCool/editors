@@ -18,6 +18,7 @@ const mimeTypeMap = {
 
 export const extension = /\.png$|\.jpe?g$/
 
+const isURL = /^(https?:|\/|\.\/)/
 
 function dataURLtoFile(dataurl, filename) {
   const arr = dataurl.split(',')
@@ -56,14 +57,23 @@ export async function render({ title, content, onSave }, root) {
 
 
   if (content) {
-    let file
-    if (typeof content === 'string') {
-      file = dataURLtoFile(content, title)
-    } else if (content.data){
-      // CAUTION 一定注意 File 的第一个参数是个 Array，里面的项是 data。
-      file = new File([Uint8Array.from(content?.data || [])], title, {type:mimeType});
+    let sizeValue
+    console.log(content)
+    if (typeof content === 'string' && isURL.test(content)) {
+      console.log("load", typeof content === 'string', isURL.test(content))
+      sizeValue = await editor.loadImageFromURL(content, title)
+
+    } else {
+      let file
+      if (typeof content === 'string') {
+        file = dataURLtoFile(content, title)
+      } else if (content.data){
+        // CAUTION 一定注意 File 的第一个参数是个 Array，里面的项是 data。
+        file = new File([Uint8Array.from(content?.data || [])], title, {type:mimeType});
+      }
+      sizeValue = await editor.loadImageFromFile(file, title)
     }
-    const sizeValue = await editor.loadImageFromFile(file, title)
+
     editor.ui.activeMenuEvent();
     editor.ui.resizeEditor({ imageSize: sizeValue });
     editor.clearUndoStack();

@@ -1,6 +1,6 @@
 /**@jsx createElement */
 import path from "path-browserify";
-import {createElement, useRef, render as renderComponent} from 'axii'
+import {createElement, render as renderComponent} from 'axii'
 import { EREditor } from 'axii-x6'
 import Shortcut from '@codexteam/shortcuts'
 //export const test = /\.storage\.json$/
