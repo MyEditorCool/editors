@@ -1,5 +1,5 @@
 import {createElement} from 'axii'
-import { emptyContent, render } from "./DocEditor.jsx";
+import { emptyContent, render } from "./packages/docEditor/DocEditor.jsx";
 
 const data = emptyContent
 

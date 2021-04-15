@@ -8,7 +8,7 @@ import 'codemirror/mode/jsx/jsx.js'
 import 'codemirror/mode/xml/xml.js'
 import baseCss from 'codemirror/lib/codemirror.css'
 import draculaCss from 'codemirror/theme/dracula.css'
-import overwriteCss from './DefaultEditor.less'
+import overwriteCss from '../../DefaultEditor.less'
 
 styleInject(baseCss)
 styleInject(overwriteCss)
@@ -26,7 +26,7 @@ const extensionToLanguage = {
 
 export const readAsText = true
 
-export async function render({ content, onSave, onChange, title }, root) {
+export async function render({ content = '', onSave, onChange, title = '' }, root) {
 
 
   const language = Object.entries(extensionToLanguage).find(([ext, value]) => {

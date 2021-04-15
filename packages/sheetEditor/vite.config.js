@@ -13,5 +13,12 @@ export default {
     preprocessorOptions: {
       less: { javascriptEnabled: true }
     }
+  },
+  build: {
+    lib: {
+      entry: './SheetEditor.jsx',
+      name: 'SheetEditor',
+      formats: ['es']
+    }
   }
 }

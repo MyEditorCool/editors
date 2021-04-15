@@ -1,8 +1,3 @@
-import path from 'path'
-
-function makePath(relativePath) {
-  return path.join(path.dirname(import.meta.url.replace('file:', '')), relativePath)
-}
 
 export default {
   esbuild: {
@@ -12,6 +7,13 @@ export default {
   css: {
     preprocessorOptions: {
       less: { javascriptEnabled: true }
+    }
+  },
+  build: {
+    lib: {
+      entry: './CodeEditor.js',
+      name: 'CodeEditor',
+      formats: ['es']
     }
   }
 }

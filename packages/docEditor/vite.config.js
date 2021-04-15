@@ -13,5 +13,12 @@ export default {
     preprocessorOptions: {
       less: { javascriptEnabled: true }
     }
+  },
+  build: {
+    lib: {
+      entry: './DocEditor.jsx',
+      name: 'DocEditor',
+      formats: ['es']
+    }
   }
 }

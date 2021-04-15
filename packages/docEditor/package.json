@@ -1,6 +1,6 @@
 {
-  "name": "@myeditorcool/editors",
-  "version": "1.1.11",
+  "name": "@myeditorcool/doceditor",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "public": true,
@@ -8,30 +8,23 @@
     "@codexteam/shortcuts": "^1.1.1",
     "axii": "^1.0.3",
     "axii-components": "^1.0.22",
-    "axii-x6": "^1.0.1",
-    "codemirror": "^5.60.0",
     "command-line-args": "^5.1.1",
-    "esbuild": "^0.9.7",
-    "open": "^8.0.3",
     "path-browserify": "^1.0.1",
-    "style-inject": "^0.3.0",
-    "tui-image-editor": "^3.14.2"
+    "style-inject": "^0.3.0"
   },
   "devDependencies": {
     "less": "^3.12.2",
     "vite": "^2.1.3"
   },
   "scripts": {
-    "start" : "vite",
-    "dev": "./link.sh && vite",
-    "local": "vite --config vite.local.config.js",
     "build": "vite build",
-    "publish:patch": "node ./scripts/publish.js --patch",
-    "publish:minor": "node ./scripts/publish.js --minor"
+    "publish:patch": "node ../scripts/publish.js --patch",
+    "publish:minor": "node ../scripts/publish.js --minor"
   },
   "files": [
     "dist"
   ],
+  "module": "./dist/DocEditor.js",
   "publishConfig": {
     "access": "public"
   },
