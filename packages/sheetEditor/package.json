@@ -21,10 +21,10 @@
   "files": [
     "dist"
   ],
-  "module": "./dist/SheetEditor.es.js",
+  "module": "./dist/sheeteditor.es.js",
   "exports": {
     ".": {
-      "import": "./dist/SheetEditor.es.js"
+      "import": "./dist/sheeteditor.es.js"
     }
   },
   "myeditorcool": {

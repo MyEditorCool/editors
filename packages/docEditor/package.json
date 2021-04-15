@@ -24,10 +24,10 @@
   "files": [
     "dist"
   ],
-  "module": "./dist/DocEditor.es.js",
+  "module": "./dist/doceditor.es.js",
   "exports": {
     ".": {
-      "import": "./dist/DocEditor.es.js"
+      "import": "./dist/doceditor.es.js"
     }
   },
   "myeditorcool": {

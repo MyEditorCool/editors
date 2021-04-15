@@ -23,10 +23,10 @@
   "files": [
     "dist"
   ],
-  "module": "./dist/ImageEditor.es.js",
+  "module": "./dist/imageeditor.es.js",
   "exports": {
     ".": {
-      "import": "./dist/ImageEditor.es.js"
+      "import": "./dist/imageeditor.es.js"
     }
   },
   "myeditorcool": {

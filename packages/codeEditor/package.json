@@ -22,10 +22,10 @@
   "files": [
     "dist"
   ],
-  "module": "./dist/CodeEditor.es.js",
+  "module": "./dist/codeeditor.es.js",
   "exports": {
     ".": {
-      "import": "./dist/CodeEditor.es.js"
+      "import": "./dist/codeeditor.es.js"
     }
   },
   "myeditorcool": {
