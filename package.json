@@ -26,6 +26,7 @@
     "dev": "./link.sh && vite",
     "local": "vite --config vite.local.config.js",
     "build": "vite build",
+    "gen": "node ./scripts/generateDefaultEditors.js",
     "publish:patch": "node ./scripts/publish.js --patch",
     "publish:minor": "node ./scripts/publish.js --minor"
   },
