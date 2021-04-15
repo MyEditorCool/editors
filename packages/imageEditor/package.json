@@ -1,6 +1,6 @@
 {
   "name": "@myeditorcool/imageeditor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "type": "module",
   "public": true,
@@ -30,7 +30,11 @@
     }
   },
   "myeditorcool": {
-    "extension": [".png", ".jpg", ".jpeg"]
+    "extension": [
+      ".png",
+      ".jpg",
+      ".jpeg"
+    ]
   },
   "publishConfig": {
     "access": "public"

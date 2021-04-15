@@ -1,6 +1,7 @@
 [
     {
         "name": "@myeditorcool/codeeditor",
+        "version": "1.0.2",
         "extension": [
             ".js",
             ".jsx",
@@ -14,15 +15,18 @@
     },
     {
         "name": "@myeditorcool/doceditor",
+        "version": "1.0.2",
         "extension": ".doc.json",
         "emptyContent": "{\"blocks\": [{\"type\": \"paragraph\",\"data\": {\"text\": \"\"}}]}",
         "readAsText": true
     },
     {
-        "name": "@myeditorcool/erEditor"
+        "name": "@myeditorcool/erEditor",
+        "version": "0.0.1"
     },
     {
         "name": "@myeditorcool/imageeditor",
+        "version": "1.0.2",
         "extension": [
             ".png",
             ".jpg",
@@ -31,11 +35,13 @@
     },
     {
         "name": "@myeditorcool/sheeteditor",
+        "version": "1.0.2",
         "extension": ".sheet.json",
         "emptyContent": "{\"name\": \"Sheet1\",\"color\": \"\",\"index\": 1,\"status\": 0,\"order\": 1,\"celldata\": [],\"config\": {}}",
         "readAsText": true
     },
     {
-        "name": "@myeditorcool/tableEditor"
+        "name": "@myeditorcool/tableEditor",
+        "version": "0.0.1"
     }
 ]
