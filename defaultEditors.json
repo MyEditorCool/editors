@@ -1,7 +1,6 @@
 [
     {
-        "name": "codeEditor",
-        "path": "https://unpkg.com/@myeditorcool/codeeditor@1.0.1",
+        "name": "@myeditorcool/codeeditor",
         "extension": [
             ".js",
             ".jsx",
@@ -14,19 +13,16 @@
         "readAsText": true
     },
     {
-        "name": "docEditor",
-        "path": "https://unpkg.com/@myeditorcool/doceditor@1.0.1",
+        "name": "@myeditorcool/doceditor",
         "extension": ".doc.json",
         "emptyContent": "{\"blocks\": [{\"type\": \"paragraph\",\"data\": {\"text\": \"\"}}]}",
         "readAsText": true
     },
     {
-        "name": "erEditor",
-        "path": "https://unpkg.com/@myeditorcool/erEditor@0.0.1"
+        "name": "@myeditorcool/erEditor"
     },
     {
-        "name": "imageEditor",
-        "path": "https://unpkg.com/@myeditorcool/imageeditor@1.0.1",
+        "name": "@myeditorcool/imageeditor",
         "extension": [
             ".png",
             ".jpg",
@@ -34,14 +30,12 @@
         ]
     },
     {
-        "name": "sheetEditor",
-        "path": "https://unpkg.com/@myeditorcool/sheeteditor@1.0.1",
+        "name": "@myeditorcool/sheeteditor",
         "extension": ".sheet.json",
         "emptyContent": "{\"name\": \"Sheet1\",\"color\": \"\",\"index\": 1,\"status\": 0,\"order\": 1,\"celldata\": [],\"config\": {}}",
         "readAsText": true
     },
     {
-        "name": "tableEditor",
-        "path": "https://unpkg.com/@myeditorcool/tableEditor@0.0.1"
+        "name": "@myeditorcool/tableEditor"
     }
 ]

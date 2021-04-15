@@ -15,8 +15,7 @@ export async function createPredefinedEditorMap(editorsPath) {
 
     const pkg = await loadJSON(path.join(editorsPath, editorName, 'package.json'))
     editors.push({
-      name: editorName,
-      path: `https://unpkg.com/${pkg.name}@${pkg.version}`,
+      name: pkg.name,
       ...pkg.myeditorcool,
     })
   }
