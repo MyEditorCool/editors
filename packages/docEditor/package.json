@@ -1,6 +1,6 @@
 {
   "name": "@myeditorcool/doceditor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "type": "module",
   "public": true,
@@ -18,13 +18,23 @@
   },
   "scripts": {
     "build": "vite build",
-    "publish:patch": "node ../scripts/publish.js --patch",
-    "publish:minor": "node ../scripts/publish.js --minor"
+    "publish:patch": "node ../../scripts/publish.js --patch",
+    "publish:minor": "node ../../scripts/publish.js --minor"
   },
   "files": [
     "dist"
   ],
-  "module": "./dist/DocEditor.js",
+  "module": "./dist/DocEditor.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/DocEditor.es.js"
+    }
+  },
+  "myeditorcool": {
+    "extension": ".doc.json",
+    "emptyContent": "{\"blocks\": [{\"type\": \"paragraph\",\"data\": {\"text\": \"\"}}]}",
+    "readAsText": true
+  },
   "publishConfig": {
     "access": "public"
   },

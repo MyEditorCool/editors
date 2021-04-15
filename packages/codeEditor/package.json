@@ -1,6 +1,6 @@
 {
   "name": "@myeditorcool/codeeditor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "type": "module",
   "public": true,
@@ -16,13 +16,30 @@
   },
   "scripts": {
     "build": "vite build",
-    "publish:patch": "node ../scripts/publish.js --patch",
-    "publish:minor": "node ../scripts/publish.js --minor"
+    "publish:patch": "node ../../scripts/publish.js --patch",
+    "publish:minor": "node ../../scripts/publish.js --minor"
   },
   "files": [
     "dist"
   ],
-  "module": "./dist/CodeEditor.js",
+  "module": "./dist/CodeEditor.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/CodeEditor.es.js"
+    }
+  },
+  "myeditorcool": {
+    "extension": [
+      ".js",
+      ".jsx",
+      ".css",
+      ".html",
+      ".xml",
+      ".json",
+      ".ts"
+    ],
+    "readAsText": true
+  },
   "publishConfig": {
     "access": "public"
   },

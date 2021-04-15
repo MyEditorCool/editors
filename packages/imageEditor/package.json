@@ -1,6 +1,6 @@
 {
   "name": "@myeditorcool/imageeditor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "type": "module",
   "public": true,
@@ -17,13 +17,21 @@
   },
   "scripts": {
     "build": "vite build",
-    "publish:patch": "node ../scripts/publish.js --patch",
-    "publish:minor": "node ../scripts/publish.js --minor"
+    "publish:patch": "node ../../scripts/publish.js --patch",
+    "publish:minor": "node ../../scripts/publish.js --minor"
   },
   "files": [
     "dist"
   ],
-  "module": "./dist/ImageEditor.js",
+  "module": "./dist/ImageEditor.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/ImageEditor.es.js"
+    }
+  },
+  "myeditorcool": {
+    "extension": [".png", ".jpg", ".jpeg"]
+  },
   "publishConfig": {
     "access": "public"
   },

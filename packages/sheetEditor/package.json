@@ -1,6 +1,6 @@
 {
   "name": "@myeditorcool/sheeteditor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "type": "module",
   "public": true,
@@ -15,13 +15,23 @@
   },
   "scripts": {
     "build": "vite build",
-    "publish:patch": "node ../scripts/publish.js --patch",
-    "publish:minor": "node ../scripts/publish.js --minor"
+    "publish:patch": "node ../../scripts/publish.js --patch",
+    "publish:minor": "node ../../scripts/publish.js --minor"
   },
   "files": [
     "dist"
   ],
-  "module": "./dist/SheetEditor.js",
+  "module": "./dist/SheetEditor.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/SheetEditor.es.js"
+    }
+  },
+  "myeditorcool": {
+    "extension": ".sheet.json",
+    "emptyContent": "{\"name\": \"Sheet1\",\"color\": \"\",\"index\": 1,\"status\": 0,\"order\": 1,\"celldata\": [],\"config\": {}}",
+    "readAsText": true
+  },
   "publishConfig": {
     "access": "public"
   },
