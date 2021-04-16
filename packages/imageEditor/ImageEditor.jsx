@@ -54,9 +54,9 @@ export async function render({ title, content, onSave }, root) {
     name : 'CMD+S',
     on : document.body,
     callback: async (e) => {
-      console.log(e)
       e.preventDefault()
-      onSave(dataURLtoBinary(editor.toDataURL({format: ext})), true)
+      const dataURL = editor.toDataURL({format: ext})
+      onSave(dataURL.split(',')[1], { encoding: 'base64' })
     }
   })
 
