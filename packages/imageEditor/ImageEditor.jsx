@@ -20,9 +20,8 @@ export const extension = /\.png$|\.jpe?g$/
 
 const isURL = /^(https?:|\/|\.\/)/
 
-function dataURLtoFile(dataurl, filename) {
+function dataURLtoBinary(dataurl) {
   const arr = dataurl.split(',')
-  const mime = arr[0].match(/:(.*?);/)[1]
   const bstr = atob(arr[1])
   let n = bstr.length
   const u8arr = new Uint8Array(n)
@@ -30,8 +29,14 @@ function dataURLtoFile(dataurl, filename) {
   while(n--){
     u8arr[n] = bstr.charCodeAt(n);
   }
+  return u8arr
+}
 
-  return new File([u8arr], filename, {type:mime});
+
+function dataURLtoFile(dataurl, filename) {
+  const arr = dataurl.split(',')
+  const mime = arr[0].match(/:(.*?);/)[1]
+  return new File([dataURLtoBinary(dataurl)], filename, {type:mime});
 }
 
 export async function render({ title, content, onSave }, root) {
@@ -51,14 +56,13 @@ export async function render({ title, content, onSave }, root) {
     callback: async (e) => {
       console.log(e)
       e.preventDefault()
-      onSave(editor.toDataURL({format: ext}), true)
+      onSave(dataURLtoBinary(editor.toDataURL({format: ext})), true)
     }
   })
 
 
   if (content) {
     let sizeValue
-    console.log(content)
     if (typeof content === 'string' && isURL.test(content)) {
       console.log("load", typeof content === 'string', isURL.test(content))
       sizeValue = await editor.loadImageFromURL(content, title)
