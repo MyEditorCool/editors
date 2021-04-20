@@ -10,6 +10,10 @@ examples: [https://github.com/MyEditorCool/editors/tree/master/packages](https:/
 
 ```javascript
 
+// bool. Read file as text. If not true, your editor will receive binary array as content.
+// checkout https://github.com/MyEditorCool/editors/tree/master/packages/imageEditor for binary content example.
+export const readAsText = true
+ 
 // optional
 export async function setup(content) {
   // transform content or do anything you need.
@@ -32,7 +36,7 @@ export function render(props, rootElement) {
   "myeditorcool": {
     "entry": "", // string. path to your entry file.
     "extension": "", // string|[string]. supported file extension,
-    "readAsText": true, // bool. Read file as text. If not true, your editor will receive binary array as content.  
+      
   }
 }
 ```
@@ -41,3 +45,12 @@ export function render(props, rootElement) {
 
 1. Publish your package to npm. When user install your package, myeditor.cool will read your package.json file to find entry file.
 2. reate a PR to [publicEditors.json](https://github.com/MyEditorCool/editors/blob/master/publicEditors.json) show you editor in myeditor.cool list.
+
+## Preview & Debug
+
+You can preview your editor use custom install:
+
+1. Open Configuration in myeditor.cool
+2. paste your package web cdn address. If you published package to npm, you can use `https://unpkg.com/{package.name}@{package.version}`.
+3. you can also start a local file server to serve your pakcage for local debugging. 
+
