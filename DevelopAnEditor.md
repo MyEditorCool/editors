@@ -10,7 +10,7 @@ examples: [https://github.com/MyEditorCool/editors/tree/master/packages](https:/
 
 ```javascript
 
-// optional. Read file as text. If not true, your editor will receive binary array as content.
+// Read file as text. If not true, your editor will receive binary array as content.
 // checkout https://github.com/MyEditorCool/editors/tree/master/packages/imageEditor for binary content example.
 export const readAsText = true
 
@@ -41,6 +41,7 @@ export function render({ onSave, onChange, content}, rootElement) {
   "myeditorcool": {
     "entry": "", // string. path to your entry file.
     "extension": "", // string|[string]. supported file extension,
+    "readAsText": true, // bool. where read content as text
   }
 }
 ```
@@ -57,4 +58,12 @@ You can preview your editor use custom install:
 1. Open Configuration in myeditor.cool
 2. paste your package web cdn address. If you published package to npm, you can use `https://unpkg.com/{package.name}@{package.version}`.
 3. you can also start a local file server to serve your pakcage for local debugging. 
+
+If you are use vite as build tool, it is very easy to debug your local editor code follow the steps:
+1. Find the url of the dir where your package.json exist. Usually your package.json is in root directory, you can visit it with `localhost:3000/package.json`.
+2. Make Sure your myeditorcool child field `entry` pointed to the entry file.
+3. Install the editor with the url in step 1.
+
+Now, you can change or debug your local code without publish to npm. 
+Notice, if you changed the content of myeditorcool field in package.json, you need to reinstall the package.  
 

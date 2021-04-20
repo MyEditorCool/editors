@@ -16,6 +16,8 @@ const mimeTypeMap = {
   'jpeg': 'image/jpeg',
 }
 
+export const readAsText = false
+
 export const extension = /\.png$|\.jpe?g$/
 
 const isURL = /^(https?:|\/|\.\/)/

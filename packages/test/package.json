@@ -1,0 +1,11 @@
+{
+  "name": "only-for-debug-example",
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "myeditorcool": {
+    "readAsText": true,
+    "extension": ".test.json",
+    "entry" : "./index.js"
+  }
+}

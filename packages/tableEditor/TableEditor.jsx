@@ -6,6 +6,8 @@ const extension = '.table.json'
 
 export const readAsText = true
 
+export const emptyContent = '[]'
+
 export async function setup(content) {
   const data = JSON.parse(content)
   return {

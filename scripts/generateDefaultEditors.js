@@ -1,6 +1,7 @@
 
 import { loadJSON } from "../util.js";
 import {writeFile, readdir} from 'fs/promises'
+import semver from 'semver'
 import path from 'path'
 
 const DEFAULT_EDITOR = 'DefaultEditor'
@@ -14,11 +15,13 @@ export async function createPredefinedEditorMap(editorsPath) {
     if (editorName === DEFAULT_EDITOR) continue
 
     const pkg = await loadJSON(path.join(editorsPath, editorName, 'package.json'))
-    editors.push({
-      name: pkg.name,
-      version: pkg.version,
-      ...pkg.myeditorcool,
-    })
+    if (semver.gt(pkg.version, '1.0.0')) {
+      editors.push({
+        name: pkg.name,
+        version: pkg.version,
+        ...pkg.myeditorcool,
+      })
+    }
   }
 
   // const editors = await loadAllFiles(editorsPath, /\.editor\.json$/)

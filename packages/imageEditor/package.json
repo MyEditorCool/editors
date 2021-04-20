@@ -30,6 +30,7 @@
     }
   },
   "myeditorcool": {
+    "readAsText" : false,
     "extension": [
       ".png",
       ".jpg",
