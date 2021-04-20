@@ -37,7 +37,7 @@
       ".xml",
       ".json",
       ".ts",
-      ".md",
+      ".md"
     ],
     "readAsText": true
   },
