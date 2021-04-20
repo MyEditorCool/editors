@@ -2,6 +2,7 @@ import Shortcut from "@codexteam/shortcuts";
 import CodeMirror from 'codemirror'
 import styleInject from 'style-inject'
 import 'codemirror/mode/javascript/javascript.js'
+import 'codemirror/mode/markdown/markdown.js'
 import 'codemirror/mode/css/css.js'
 import 'codemirror/mode/htmlmixed/htmlmixed.js'
 import 'codemirror/mode/jsx/jsx.js'

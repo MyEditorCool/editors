@@ -5,8 +5,8 @@
     ".css",
     ".html",
     ".xml",
-    ".json",
-    ".ts"
+    ".ts",
+    ".md"
   ],
   "readAsText": true
 }
