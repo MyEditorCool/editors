@@ -9,7 +9,7 @@ import 'codemirror/mode/jsx/jsx.js'
 import 'codemirror/mode/xml/xml.js'
 import baseCss from 'codemirror/lib/codemirror.css'
 import draculaCss from 'codemirror/theme/dracula.css'
-import overwriteCss from '../../DefaultEditor.less'
+import overwriteCss from './Editor.less'
 
 styleInject(baseCss)
 styleInject(overwriteCss)
