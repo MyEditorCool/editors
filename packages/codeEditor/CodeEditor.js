@@ -23,6 +23,7 @@ const extensionToLanguage = {
   '.html': 'htmlmixed',
   '.xml': 'xml',
   '.css': 'css',
+  '.md': 'markdown',
 }
 
 export const readAsText = true
