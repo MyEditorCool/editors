@@ -51,13 +51,15 @@ export function render({ onSave, onChange, content}, rootElement) {
 1. Publish your package to npm. When user install your package, myeditor.cool will read your package.json file to find entry file.
 2. reate a PR to [publicEditors.json](https://github.com/MyEditorCool/editors/blob/master/publicEditors.json) show you editor in myeditor.cool list.
 
-## Preview & Debug
+## Preview
 
 You can preview your editor use custom install:
 
 1. Open Configuration in myeditor.cool
 2. paste your package web cdn address. If you published package to npm, you can use `https://unpkg.com/{package.name}@{package.version}`.
 3. you can also start a local file server to serve your pakcage for local debugging. 
+
+## Live code & Debug
 
 If you are use vite as build tool, it is very easy to debug your local editor code follow the steps:
 1. Find the url of the dir where your package.json exist. Usually your package.json is in root directory, you can visit it with `localhost:3000/package.json`.
@@ -67,3 +69,9 @@ If you are use vite as build tool, it is very easy to debug your local editor co
 Now, you can change or debug your local code without publish to npm. 
 Notice, if you changed the content of myeditorcool field in package.json, you need to reinstall the package.  
 
+Run [https://github.com/MyEditorCool/editors](https://github.com/MyEditorCool/editors) local debugging example. Follow the steps:
+1. install dependencies in root directory.
+2. run `npm start`
+3. install example editor in myeditor.cool with address `http://localhost:3000/packages/test`
+4. create a `1.test.json` file to see result.
+ 
