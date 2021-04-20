@@ -1,7 +1,7 @@
 [
     {
         "name": "@myeditorcool/codeeditor",
-        "version": "1.0.4",
+        "version": "1.0.5",
         "extension": [
             ".js",
             ".jsx",
@@ -9,7 +9,8 @@
             ".html",
             ".xml",
             ".json",
-            ".ts"
+            ".ts",
+            ".md"
         ],
         "readAsText": true
     },
