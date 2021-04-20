@@ -1,7 +1,7 @@
 [
     {
         "name": "@myeditorcool/codeeditor",
-        "version": "1.0.3",
+        "version": "1.0.4",
         "extension": [
             ".js",
             ".jsx",
