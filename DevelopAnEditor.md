@@ -46,10 +46,10 @@ export function render({ onSave, onChange, content, ...setupReturnedValue}, root
 {
   ...
   "myeditorcool": {
-    "entry": "", // string. path to your entry file.
-    "extension": "", // string|[string]. supported file extension,
-    "readAsText": true, // bool, optional. where read content as text,
-    "emptyContent": "", // string, optional. used by myeditor.cool to create new file.
+    "entry": "", // string. Path to your entry file.
+    "extension": "", // string|[string]. Supported file extension. We suggest you create a unique extension. Myeditorcool use this field to find the right editor for opend file.
+    "readAsText": true, // bool, optional. Where read content as text.
+    "emptyContent": "", // string, optional. Used by myeditor.cool to create new file.
   }
 }
 ```
