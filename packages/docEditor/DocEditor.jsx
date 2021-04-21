@@ -40,7 +40,7 @@ export function render({ data, onSave, onChange }, root) {
 
   renderComponent((
     <div block block-height='100%' block-overflow-y-auto style={{background:'#fff'}}>
-      <Editorjs tools={tools} data={data} ref={editor} onChange={onChange} placeholder="写下你的灵感"/>
+      <Editorjs tools={tools} data={data} ref={editor} onChange={onChange} placeholder="Write down your ideas..."/>
     </div>
 
   ), root)
