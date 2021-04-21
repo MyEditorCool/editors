@@ -13,23 +13,30 @@ examples: [https://github.com/MyEditorCool/editors/tree/master/packages](https:/
 // Read file as text. If not true, your editor will receive binary array as content.
 // checkout https://github.com/MyEditorCool/editors/tree/master/packages/imageEditor for binary content example.
 export const readAsText = true
-
-// optional. myeditor.cool will use it when user create new file.  
-export const emptyContent = ''
  
 // optional
-export async function setup(content) {
-  // transform content or do anything you need.
+/**
+ * @params {string|Unit8Array} content. Current file content. If export readAsText = true, type will be string, otherwise Unit8Array
+ * @params {string} filepath. Current file path.
+ * @params {object} api. File system like api to read/write other files. Checkout https://github.com/MyEditorCool/editors/tree/master/packages/erEditor for example.
+ */
+export async function setup(content, filepath, { api }) {
+  // transform content like parse string to json or do anything you need.
   // returned key values will be passed to as 1st argument to render function
   return {}
 }
 
-// if no setup function exported, content will be passed in as field 'content'. 
-// otherwise props will be the object your setup function returned.
-export function render({ onSave, onChange, content}, rootElement) {
-  // onSahve: call onSave when user want to save file content: onSave(newContent). 
-  // onChange: call onChange when user changed file content.
-  // content: when no setup function exported, file content will be passed in througn this argument. 
+// if no setup function exported, returned value will be merge into first argument. 
+/**
+ * @params {function} onSave. Call onSave when user want to save file content: onSave(newContent).
+ * @params {function} onChange. Call onChange when user changed file content.
+ * @params {string|unit8Array} content.
+ * @params {object} setupReturnedValue.
+ * @params {HTMLElement} rootElement. The root element that you can mount your editor.
+ */
+export function render({ onSave, onChange, content, ...setupReturnedValue}, rootElement) {
+  // render your editor like:
+  // render(<Editor />, rootElement)
 }
 ```
 
@@ -41,7 +48,8 @@ export function render({ onSave, onChange, content}, rootElement) {
   "myeditorcool": {
     "entry": "", // string. path to your entry file.
     "extension": "", // string|[string]. supported file extension,
-    "readAsText": true, // bool. where read content as text
+    "readAsText": true, // bool, optional. where read content as text,
+    "emptyContent": "", // string, optional. used by myeditor.cool to create new file.
   }
 }
 ```
@@ -49,7 +57,7 @@ export function render({ onSave, onChange, content}, rootElement) {
 ## Publish
 
 1. Publish your package to npm. When user install your package, myeditor.cool will read your package.json file to find entry file.
-2. reate a PR to [publicEditors.json](https://github.com/MyEditorCool/editors/blob/master/publicEditors.json) show you editor in myeditor.cool list.
+2. create a PR to [publicEditors.json](https://github.com/MyEditorCool/editors/blob/master/publicEditors.json) show you editor in myeditor.cool list.
 
 ## Preview
 
@@ -57,7 +65,7 @@ You can preview your editor use custom install:
 
 1. Open Configuration in myeditor.cool
 2. paste your package web cdn address. If you published package to npm, you can use `https://unpkg.com/{package.name}@{package.version}`.
-3. you can also start a local file server to serve your pakcage for local debugging. 
+3. you can also start a local file server to serve your package for local debugging. 
 
 ## Live code & Debug
 

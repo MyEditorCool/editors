@@ -1,5 +1,5 @@
 {
-  "name": "@myeditorcool/erEditor",
+  "name": "@myeditorcool/ereditor",
   "version": "0.0.1",
   "description": "",
   "type": "module",
@@ -31,6 +31,9 @@
   "files": [
     "dist"
   ],
+  "myeditorcool" : {
+    "readAsText": true
+  },
   "publishConfig": {
     "access": "public"
   },
