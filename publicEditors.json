@@ -1,1 +1,7 @@
-[]
+[{
+  "name": "@myeditorcool/ereditor",
+  "extension": ".erstore",
+  "version": "0.0.1",
+  "readAsText": true,
+  "emptyContent": "{\"entities\": [],\"relations\":[]}"
+}]
