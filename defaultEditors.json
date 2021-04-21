@@ -16,7 +16,7 @@
     },
     {
         "name": "@myeditorcool/doceditor",
-        "version": "1.0.3",
+        "version": "1.0.4",
         "extension": ".doc.json",
         "emptyContent": "{\"blocks\": [{\"type\": \"paragraph\",\"data\": {\"text\": \"\"}}]}",
         "readAsText": true
@@ -24,6 +24,7 @@
     {
         "name": "@myeditorcool/imageeditor",
         "version": "1.0.6",
+        "readAsText": false,
         "extension": [
             ".png",
             ".jpg",
