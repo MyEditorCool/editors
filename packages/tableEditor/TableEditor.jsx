@@ -1,5 +1,5 @@
 /**@jsx createElement */
-import {createElement, useRef, render as renderComponent} from 'axii'
+import {createElement, useRef, render as renderComponent, useImperativeHandle} from 'axii'
 import ToastGrid from 'axii-components/dist/toastGrid/index.js'
 
 const extension = '.table.json'
@@ -15,7 +15,7 @@ export async function setup(content) {
   }
 }
 
-export function render({ data: tables }, root) {
+export function render({ data: tables, ref }, root) {
   const editor = useRef()
   const save = () => {
     console.log('不能 save，这是个生成的文件')
@@ -39,6 +39,12 @@ export function render({ data: tables }, root) {
     }, {})
   }))
 
+  if(ref) {
+    useImperativeHandle(ref, () => ({
+      // NOTE: 不支持保存
+      getData: () => {}
+    }))
+  }
 
   renderComponent (
     <div>

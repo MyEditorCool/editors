@@ -1,5 +1,5 @@
 /**@jsx createElement */
-import {createElement} from 'axii'
+import {createElement, useImperativeHandle} from 'axii'
 import ImageEditor from 'tui-image-editor'
 
 import Shortcut from "@codexteam/shortcuts";
@@ -41,7 +41,7 @@ function dataURLtoFile(dataurl, filename) {
   return new File([dataURLtoBinary(dataurl)], filename, {type:mime});
 }
 
-export async function render({ title, content, onSave }, root) {
+export async function render({ title, content, onSave, ref }, root) {
   const ext = title.split('.').pop()
   const mimeType = mimeTypeMap[ext]
 
@@ -51,6 +51,13 @@ export async function render({ title, content, onSave }, root) {
       menu: ['crop', 'flip', 'rotate', 'draw', 'shape', 'icon', 'text', 'mask', 'filter']
     }
   })
+
+  if(ref) {
+    useImperativeHandle(ref, () => ({
+      // NOTE: 此处不删减encoding前缀，需要外部自行处理
+      getData: () => editor.toDataURL({format: ext})
+    }))
+  }
 
   new Shortcut({
     name : 'CMD+S',

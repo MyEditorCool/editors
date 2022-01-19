@@ -1,5 +1,5 @@
 /**@jsx createElement */
-import {createElement, useRef, render as renderComponent} from 'axii'
+import {createElement, useRef, render as renderComponent, useImperativeHandle} from 'axii'
 import Editorjs from 'axii-components/dist/editorjs/index.js'
 import Shortcut from '@codexteam/shortcuts'
 
@@ -15,7 +15,7 @@ export function setup(content) {
 
 export const readAsText = true
 
-export function render({ data, onSave, onChange }, root) {
+export function render({ data, onSave, onChange, ref }, root) {
   const editor = useRef()
   const tools = {
     image: {
@@ -27,6 +27,12 @@ export function render({ data, onSave, onChange }, root) {
     table: {
       class: Editorjs.TablePlugin
     }
+  }
+  
+  if(ref) {
+    useImperativeHandle(ref, () => ({
+      getData: async () => JSON.stringify(await editor.current.save())
+    }))
   }
 
   new Shortcut({

@@ -1,3 +1,4 @@
+import {useImperativeHandle} from 'axii'
 import Shortcut from "@codexteam/shortcuts";
 import CodeMirror from 'codemirror'
 import styleInject from 'style-inject'
@@ -28,7 +29,7 @@ const extensionToLanguage = {
 
 export const readAsText = true
 
-export async function render({ content = '', onSave, onChange, title = '' }, root) {
+export async function render({ content = '', onSave, onChange, title = '', ref }, root) {
 
 
   const language = Object.entries(extensionToLanguage).find(([ext, value]) => {
@@ -41,6 +42,11 @@ export async function render({ content = '', onSave, onChange, title = '' }, roo
       theme: "dracula",
     });
 
+  if(ref) {
+    useImperativeHandle(ref, () => ({
+      getData: () => editor.getValue()
+    }))
+  }
 
   new Shortcut({
     name : 'CMD+S',
