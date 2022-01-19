@@ -1,4 +1,5 @@
 import Shortcut from "@codexteam/shortcuts";
+import {useImperativeHandle} from 'axii'
 
 export const extension = '.sheet.json'
 
@@ -89,7 +90,7 @@ const defaultData = [
 
 export const emptyContent = JSON.stringify(defaultData)
 
-export function render({ data, onSave, title }, root) {
+export function render({ data, onSave, title, ref }, root) {
   let sheetEditor
   Promise.all([
     appendStylesheet('https://cdn.jsdelivr.net/npm/luckysheet/dist/plugins/css/pluginsCss.css'),
@@ -111,6 +112,12 @@ export function render({ data, onSave, title }, root) {
   }).catch(e => {
     console.error(e)
   })
+  
+  if(ref) {
+    useImperativeHandle(ref, () => ({
+      getData: () => JSON.stringify(luckysheet.getAllSheets())
+    }))
+  }
 
   new Shortcut({
     name : 'CMD+S',

@@ -1,6 +1,6 @@
 /**@jsx createElement */
 import path from "path-browserify";
-import {createElement, render as renderComponent} from 'axii'
+import {createElement, render as renderComponent, useRef, useImperativeHandle} from 'axii'
 import { EREditor } from 'axii-x6'
 import Shortcut from '@codexteam/shortcuts'
 //export const test = /\.storage\.json$/
@@ -32,8 +32,14 @@ export async function setup(content, filePath, {api, dirs}) {
   }
 }
 
-export function render({ data, customFields, onSave }, root) {
+export function render({ data, customFields, onSave, ref }, root) {
+  const editor = useRef()
   const onDataSave = (d) => onSave(JSON.stringify(d))
-  renderComponent(<EREditor data={data} customFields={customFields} onSave={onDataSave}/>, root)
+  if(ref) {
+    useImperativeHandle(ref, () => ({
+      getData: () => JSON.stringify(editor.current.getData())
+    }))
+  }
+  renderComponent(<EREditor data={data} customFields={customFields} ref={editor} onSave={onDataSave}/>, root)
 }
 
